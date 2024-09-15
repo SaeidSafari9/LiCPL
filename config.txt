@@ -1,0 +1,14 @@
+# Root Path, This where the GEOC directory lies and outputs will be created
+root_path = path/to/root/directory
+
+# Temporal Coherency Threshhold (Phase linking Goodness of Fit), pixels below this threshold will be masked after phase linking (between 0-1)
+GoF = 0.4
+
+# Average Coherency Threshold, pixels below this threshold will be masked(between 0-255)
+avg_coh = 10
+
+# Number of Rows in each patch (decrease if enough RAM is not available)
+patches_nRows = 10
+
+# Output interferograms network for unwrapping (1: Original Network, 2: Temporal Baselines lower than 18 days)
+network_config = 2
