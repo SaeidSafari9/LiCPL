@@ -1,6 +1,12 @@
 # Root Path, This where the GEOC directory lies and outputs will be created
 root_path = path/to/root/directory
 
+# Network of interferograms used for phase linking, by default (PL_net = 1) the full available network will be used. If PL_net is set to 2, short temporal baselines (similar to SBAS methods) with n closest connections will be used for phase linking input network.
+PL_net = 1
+
+# Bandwidth or number of connections used for using a short temporal network as input for phase linking, only useful if PL_net = 2.
+PL_bw = 3
+
 # Temporal Coherency Threshhold (Phase linking Goodness of Fit), pixels below this threshold will be masked after phase linking (between 0-1)
 GoF = 0.4
 
@@ -10,5 +16,8 @@ avg_coh = 10
 # Number of Rows in each patch (decrease if enough RAM is not available)
 patches_nRows = 10
 
-# Output interferograms network for unwrapping (1: Original Network, 2: Temporal Baselines lower than 18 days)
-network_config = 2
+# Output interferograms network for unwrapping (1: Original Network, 2: Connection-n or bandwidth-n with n representing n closest SLCs)
+unw_network_config = 2
+
+# Temporal Baselines steps or number of connections used for network_config = 2. for Sentinel-1, each step can represent 6 days at minimum (Will have no effects if network_config = 1)
+unw_bandwidth = 3
